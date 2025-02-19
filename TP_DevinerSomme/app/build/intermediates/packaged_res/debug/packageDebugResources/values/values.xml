@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">TP_DevinerSomme</string>
+    <string name="calculer_somme">Calculer la somme</string>
+    <string name="deviner">Deviner somme</string>
+    <string name="envoyer_sms">Envoyer par SMS</string>
+    <string name="nom">Nom</string>
+    <string name="premier_entier">Entrez le premier entier</string>
+    <string name="prenom">Prénom</string>
+    <string name="resultat">Résultat affiché ici</string>
+    <string name="second_entier">Entrer le second entier</string>
+    <string name="somme">Somme : </string>
+    <string name="valider">Valider</string>
+    <style name="Base.Theme.TP_DevinerSomme" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.TP_DevinerSomme" parent="Base.Theme.TP_DevinerSomme"/>
+</resources>
