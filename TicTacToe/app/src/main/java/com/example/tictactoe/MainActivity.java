@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private GridLayout grid;
 
     int playNumber = 0;
-    Random rand = new Random(10);
+    Random rand = new Random();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +37,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nouvellePartie();
     }
 
+    private boolean findWinner() {
+        return false;
+    }
+
+    private int findNextWinningPos() {
+        int[] gameGrid = new int[9];
+        return -1;
+    }
+
+    private boolean placerCase(View view, Drawable background, int position) {
+        view.setBackground(background);
+        view.setEnabled(false);
+        playNumber++;
+
+        if (playNumber >= 9) {
+            finPartie();
+            return false;
+        }
+
+        // checker la ligne
+        int row = position / 3;
+        Drawable drawable = null;
+        int rowCount = 0;
+        int min = 3 * row;
+        int max = row * 3 + 3;
+        for (int i = min; i < max; i++) {
+            Drawable currSymbol = grid.getChildAt(i).getBackground();
+            if (drawable == null) {
+                drawable = currSymbol;
+                rowCount++;
+            } else if (currSymbol != drawable) break;
+            else rowCount++;
+        }
+        if (rowCount == 3) return false;
+
+        return true;
+    }
+
+    private void finPartie() {
+        statusText.setText("Partie nulle, appuyer sur 'recommencer'!");
+    }
+
     private void nouvellePartie() {
         // Det random des symbols
-        if(rand.nextInt(2) == 0) {
+        if (rand.nextInt(2) == 0) {
             computerSymbol = R.drawable.o;
             playerSymbol = R.drawable.x;
         } else {
@@ -46,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             playerSymbol = R.drawable.o;
         }
 
-        for(int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
             View view = grid.getChildAt(i);
 
             // raz des tuiles
@@ -55,24 +98,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             view.setEnabled(true);
 
             Drawable symbol = (Drawable) this.getResources().getDrawable(playerSymbol);
+            int finalI = i;
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    view.setBackground(symbol);
-                    view.setEnabled(false);
-                    playNumber++;
-                    tourOrdinateur();
+                    if (placerCase(view, symbol, finalI)) {
+                        tourOrdinateur();
+                    }
                 }
             });
         }
 
+        playNumber = 0;
         // Det random du joueur qui commence;
-        if(rand.nextInt(2) == 0) {
+        if (rand.nextInt(2) == 0) {
             attendreTourJouer();
         } else {
-            if(playNumber < 9) {
-                tourOrdinateur();
-            }
+            tourOrdinateur();
         }
     }
 
@@ -86,28 +128,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         boolean caseValide = false;
         View view = null;
-        while(!caseValide) {
-            int index = rand.nextInt(10);
+        int index = -1;
+        while (!caseValide) {
+            index = rand.nextInt(9);
             View caseGrille = grid.getChildAt(index);
+            if (caseGrille.isEnabled()) {
                 view = caseGrille;
                 caseValide = true;
+            }
         }
 
-        if(view != null) {
+        if (view != null) {
             Drawable drawable = (Drawable) this.getResources().getDrawable(computerSymbol);
-            view.setBackground(drawable);
-            view.setEnabled(false);
-        }
-
-        playNumber++;
-        if(playNumber < 9) {
-            attendreTourJouer();
+            if (placerCase(view, drawable, index)) {
+                attendreTourJouer();
+            }
         }
     }
 
     @Override
     public void onClick(View view) {
-        if(view == resetButton) {
+        if (view == resetButton) {
             nouvellePartie();
         }
     }
