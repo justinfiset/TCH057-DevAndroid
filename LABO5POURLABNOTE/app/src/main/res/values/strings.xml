@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LABO5-POURLABNOTE</string>
+    <string name="tache_nom">Nom</string>
+    <string name="etat">État</string>
+    <string name="tache_description">Description</string>
+    <string name="titre_application">Liste de tâches</string>
+    <string name="btn_ajouter">Ajouter une tâche</string>
+    <string name="titre_ajouter">Ajouter une tâche</string>
+    <string name="edit_nom_tache">Nom de la tâche</string>
+    <string name="edit_description_tache">Description</string>
+    <string name="etat_tache">État de la tâche</string>
+    <string name="nom_tache">Nom de la tâche</string>
+    <string name="modifier_une_t_che">Modifier une tâche</string>
+    <string name="lbl_edit_description_tache">Description de la tâche</string>
+    <string name="modifier_tache">Modifier la tâche</string>
+    <string name="btn_ajouter_tache">Ajouter la tâche</string>
+    <string name="btn_annuler">Annuler</string>
+</resources>

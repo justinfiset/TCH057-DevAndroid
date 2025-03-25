@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="etatsTache">
+        <item>Initial</item>
+        <item>En cours</item>
+        <item>Terminée</item>
+    </string-array>
+</resources>
