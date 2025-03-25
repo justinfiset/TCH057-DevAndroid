@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">MyApplicationLabo8</string>
+    <string name="b00kets">b00kETS</string>
+    <style name="Base.Theme.MyApplicationLabo8" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.MyApplicationLabo8" parent="Base.Theme.MyApplicationLabo8"/>
+</resources>

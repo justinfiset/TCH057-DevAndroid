@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="etatsTache">
+        <item>initial</item>
+        <item>démarrée</item>
+        <item>terminée</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Labo5</string>
+    <string name="description">Description</string>
+    <string name="edition_tache">Edition tache</string>
+    <string name="nouvelle_tache">Nouvelle tache</string>
+    <style name="Base.Theme.Lab5" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Lab5" parent="Base.Theme.Lab5"/>
+</resources>

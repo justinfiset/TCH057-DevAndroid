@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnCrediter
+id btnDebiter
+id btnRetourEdit
+id lvComptes
+id tvNumCompte
+id tvNumCompteEdit
+id tvSoldeCompte
+id tvSoldeCompteEdit
+id tvTitulaireCompte
+id txtMontantEdit
+layout activity_edit
+layout activity_main
+layout compte_layout
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.MyApplicationArchitecture
+style Theme.MyApplicationArchitecture
+xml backup_rules
+xml data_extraction_rules
